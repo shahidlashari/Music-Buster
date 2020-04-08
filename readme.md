@@ -1,8 +1,8 @@
 Project-1 (Music Buster)
 
 URL Links:
-1.
-2.
+https://github.com/shahidlashari/project1
+
 
 Description:
 

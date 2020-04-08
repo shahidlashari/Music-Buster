@@ -38,4 +38,4 @@ Search parameter to get all required data from multiple ajax call functions.Embe
 
 However desired results achieved by testing each function by console log and debugging it, inspecting each property and attribute, changing functionality after output, error handling, discussion with team, asking help of TAs and Instructor to get success.
 
-![image](https://user-images.githubusercontent.com/61823648/78757446-5f73bb80-7931-11ea-8e99-645a92a1115f.png)
+![image](https://drive.google.com/file/d/1UgYdNqTjhsBSKKHcRLaNytu3TxfGyyb5/view)

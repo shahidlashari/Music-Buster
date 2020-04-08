@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+.hero {
+background-image: url("../images/hero-image.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+.hero-body {
+    margin: 0 auto;
+    text-align: center;
+}
+.column {
+    padding: 0.25rem 0.75rem;
+}
+.count {
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    margin-left: 1rem;
+    text-shadow: 1px 1px black;
+}
+#hero-microphone-image {
+    margin-bottom: 5px;
+    height: 70px;
+    width: 60px;
+    border-radius: 1rem;
+}
+#hero-title,
+#hero-subtitle-1,
+#hero-subtitle-2 {
+    color: rgb(255, 255, 255);
+}
+#hero-title {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+#hero-subtitle-1 {
+    margin-bottom: 5px;
+}
+#hero-title,
+#hero-subtitle-1,
+#hero-subtitle-2 {
+    text-shadow: 1px 1px black;
+}
+#toggle-search {
+    float: right;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+#search-song,
+#search-artist,
+#search-album {
+    margin-bottom: 10px;
+}
+#album-control,
+#song-control {
+    display: none;
+}
+#error-text {
+    text-align: center;
+    font-size: 16px;
+    display: none;
+}
+#submit-button,
+#clear-button {
+    margin-top: 10px;
+}
+#mic-subtitle {
+    text-align: center;
+    margin-top: -20px;
+    margin-left: 20px;
+}
+.speech {
+    border: 1px solid #DDD;
+    width: 520px;
+    margin: 10;
+    margin-left: 20px;
+}
+.speech input {
+    border: 0;
+    width: 90%;
+    display: inline-block;
+    height: 45px;
+    margin-left: -10px;
+}
+.speech img {
+    float: n;
+    width: 30px
+}
+#trending-title {
+    padding: 20px;
+    margin-bottom: -50px;
+    font-size: 34px;
+    text-align: center;
+    font-family: cursive;
+}
+#display-artist-container,
+#display-album-container,
+#display-song-container {
+    display: none;
+}
+#display-artist-card,
+#display-trending-album-card {
+    padding: 10px;
+    margin-top: 40px;
+}
+#readMoreBtn,
+#fullDescriptionBtnAlbum,
+#fullDescriptionBtnSong,
+#fullLyricsBtnSong {
+    margin-top: 15px;
+}
+#trending-album-name-label,
+#trending-track-name-label,
+#artist-style-genre-mood-label,
+#album-name-label,
+#album-year-label,
+#album-style-genre-mood-label,
+#song-name-label,
+#song-album-name-label,
+#song-style-genre-mood-label {
+    margin-top: 10px;
+}
+#artist-second-columns,
+#song-lyrics-column {
+    margin-top: -100px;
+}
+.div-trending-album-artist,
+.div-trending-song-album-artist,
+.div-album,
+.div-most-loved-tracks,
+.div-music-videos {
+    margin-bottom: 15px;
+}
+#trackInfoBtn {
+    font-size: 12px;
+    margin-top: 5px;
+}
+#display-album-card,
+#display-song-card {
+    padding: 10px;
+    margin-top: 10px;
+}
+#main-footer {
+    margin-top: 30px;
+    height: 200px
+}
+#feedback-icon {
+    margin: 0 auto;
+}
+#website-icon,
+#facebook-icon,
+#twitter-icon {
+    height: 45px;
+    width: 45px;
+}
+#website-icon {
+    color: black;
+}
+#facebook-icon {
+    color: rgb(59, 59, 128);
+}
+#twitter-icon {
+    color: rgb(120, 207, 236);
+}
+.count {
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    margin-left: 1rem;
+    text-shadow: 1px 1px black;
+}
+@media screen and (max-width: 769px) {
+    .section {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        } 
+        #artist-image-section {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        #artist-social-media-section {
+            padding-bottom: 3rem;
+        }
+        #artist-discography-section {
+            padding-top: 2.5rem;
+        }
+        #song-music-video-section {
+            padding-bottom: 2rem;
+        }
+        #song-lyrics-section {
+            padding-top:3rem;
+        }
+}    
+@media screen and (max-width: 578px) {
+    .section {
+      padding: 1rem 1.5rem;
+    }
+    .speech {
+      width: 80%;
+    }
+    .footer {
+      padding: 1rem 0.5rem 3rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    .section {
+      padding: 1rem 1rem;
+    }
+    .speech {
+      width: 80%;
+    }
+    .speech input {
+      margin-left: 0px;
+    }
+    
+    #main-footer {
+      margin-top: 0px;
+      height: 100px;
+    }
+}

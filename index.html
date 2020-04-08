@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Project 1 - Music Buster</title>
+</head>
+
+<body>
+    <header>
+        <section class="hero is-small">
+            <div id="hero-container" class="container">
+                <div class="hero-body">
+                    <img id="hero-microphone-image" src="./assets/images/microphone.png" width="60" height="20">
+                    <h1 id="hero-title" class="title">Music Buster</h1>
+                    <h2 id="hero-subtitle-1" class="subtitle">Get all kinds of cool information from your favorite
+                        artists!</h2>
+                    <h2 id="hero-subtitle-2" class="subtitle">Including discography, album/song details, music videos,
+                        lyrics, and more!</h2>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div class="columns">
+            <div class= "column is-narrow">
+                <section class="section">
+                    <div id="search-parameters-field" class="field">
+                        <label class="label is-md is has-icons-left">Search Parameters</label>
+                        <button id="toggle-search" class="button is-light is-small">...</button>
+                        <div class="control has-icons-left has-icons-right">
+                            <input id="search-artist" class="input is-md" autocomplete="off" type="text"
+                                placeholder="Artist Name">
+                            <span class="icon is-md is-left">
+                                <i class="fas fa-search "></i>
+                            </span>
+                            <span class="icon is-md is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                        <div id="album-control" class="control has-icons-left has-icons-right response">
+                            <input id="search-album" class="input is-md" autocomplete="off" type="text"
+                                placeholder="Album Name">
+                            <span class="icon is-md is-left">
+                                <i class="fas fa-search "></i>
+                            </span>
+                            <span class="icon is-md is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                        <div id="song-control" class="control has-icons-left has-icons-right response">
+                            <input id="search-song" class="input is-md" autocomplete="off" type="text"
+                                placeholder="Song Name">
+                            <span class="icon is-md is-left">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <span class="icon is-md is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                        <p id="error-text" class="help is-danger">Please input a valid artist name!</p>
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <button id="submit-button" class="button is-light is-link is-outlined">Submit</button>
+                            </p>
+                            <p class="control">
+                                <button id="clear-button" class="button is-outlined">Clear</button>
+                            </p>
+                        </div>
+                </section>
+                <br>
+                <div id="mic-subtitle" class="subtitle">
+                    <p>Click on the mic if you want to search through Google by speaking!</p>
+                    <form id="speachSearch" method="get" action="https://www.google.com/search">
+                        <div class="speech">
+                            <input class="input" autocomplete="off" type="text" name="q" id="transcript"
+                                placeholder="Speak">
+                            <img id="microphone-image" class="is-center" onclick="startDictation()"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/256px-Google_mic.svg.png"
+                                height="20" width="20">
+                        </div>
+                    </form>
+                </div>
+            </div>
+                <div id="display-trending-album-container" class="container is-fluid">
+                    <div id="display-trending-album-card" class="card">
+                        <h1 id="trending-title">Current Trending</h1>
+                        <div id="trending-album-columns" class="columns">
+                            <div id="-trending-album-image-column" class="column">
+                                <section id="trending-album-image-section" class="section">
+                                    <label class="label">
+                                        Album Thumbnail
+                                    </label>
+                                    <div id="trending-album-thumbnail"></div>
+                                    <label id="trending-album-name-label" class="label">
+                                        Album Name
+                                    </label>
+                                    <div id="trending-album-name"></div>
+                                </section>
+                            </div>
+                            <div id="-trending-track-image-column" class="column">
+                                <section id="trending-song-track-section" class="section">
+                                    <label class="label">
+                                        Track Thumbnail
+                                    </label>
+                                    <div id="trending-track-thumbnail"></div>
+                                    <label id="trending-track-name-label" class="label">
+                                        Track Name
+                                    </label>
+                                    <div id="trending-track-name"></div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="display-artist-container" class="container is-fluid">
+                    <div id="display-artist-card" class="card">
+                        <div id="artist-first-columns" class="columns">
+                            <div id="artist-image-column" class="column">
+                                <section id="artist-image-section" class="section">
+                                    <label class="label">
+                                        Thumbnail
+                                    </label>
+                                    <div id="artist-thumbnail"></div>
+                                </section>
+                            </div>
+                            <div id="artist-bio-column" class="column">
+                                <section id="artist-bio-section" class="section">
+                                    <label class="label">
+                                        Bio
+                                    </label>
+                                    <div id="artist-biography"></div>
+                                </section>
+                            </div>
+                            <div id="artist-social-media-column" class="column">
+                                <section id="artist-social-media-section" class="section">
+                                    <label class="label">
+                                        Social Media
+                                    </label>
+                                    <div id="artist-social-media">
+                                    </div>
+                                    <label id="artist-style-genre-mood-label" class="label">
+                                        Style/Genre/Mood
+                                    </label>
+                                    <div id="artist-style-genre-mood"></div>
+                                </section>
+                            </div>
+                        </div>
+                        <div id="artist-second-columns" class="columns">
+                            <div id="artist-discography-column" class="column">
+                                <section id="artist-discography-section" class="section">
+                                    <label class="label">
+                                        Discography
+                                    </label>
+                                    <div id="artist-discography"></div>
+                                </section>
+                            </div>
+                            <div id="artist-most-loved-tracks-column" class="column">
+                                <section id="artist-most-loved-tracks-section" class="section">
+                                    <label class="label">
+                                        Most Loved Tracks
+                                    </label>
+                                    <div id="artist-most-loved-tracks"></div>
+                                </section>
+                            </div>
+                            <div id="artist-music-videos-column" class="column">
+                                <section id="artist-music-videos-section" class="section">
+                                    <label class="label">
+                                        Music Videos
+                                    </label>
+                                    <div id="artist-music-videos"></div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="display-album-container" class="container is-fluid">
+                <div id="display-album-card" class="card">
+                    <div id="album-columns" class="columns">
+                        <div id="album-image-column" class="column">
+                            <section id="album-image-section" class="section">
+                                <label class="label">
+                                    Album Thumbnail
+                                </label>
+                                <div id="album-thumbnail"></div>
+                                <label id="album-name-label" class="label">
+                                    Album Name
+                                </label>
+                                <div id="album-name"></div>
+                            </section>
+                        </div>
+                        <div id="album-description-column" class="column">
+                            <section id="album-description-section" class="section">
+                                <label class="label">
+                                    Album Description
+                                </label>
+                                <div id="album-description"></div>
+                            </section>
+                        </div>
+                        <div id="album-label-column" class="column">
+                            <section id="album-label-section" class="section">
+                                <label class="label">
+                                    Label
+                                </label>
+                                <div id="album-label"></div>
+                                <label id="album-year-label" class="label">
+                                    Year Released
+                                </label>
+                                <div id="album-year"></div>
+                                <label id="album-style-genre-mood-label" class="label">
+                                    Style/Genre/Mood
+                                </label>
+                                <div id="album-style-genre-mood"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="display-song-container" class="container is-fluid">
+                <div id="display-song-card" class="card">
+                    <div id="song-columns" class="columns">
+                        <div id="song-image-column" class="column">
+                            <section id="song-image-section" class="section">
+                                <label class="label">
+                                    Song Thumbnail
+                                </label>
+                                <div id="song-thumbnail"></div>
+                                <label id="song-name-label" class="label">
+                                    Song Name
+                                </label>
+                                <div id="song-name"></div>
+                                <label id="song-album-name-label" class="label">
+                                    Album Name
+                                </label>
+                                <div id="song-album-name"></div>
+                            </section>
+                        </div>
+                        <div id="song-description-column" class="column">
+                            <section id="song-description-section" class="section">
+                                <label class="label">
+                                    Song Description
+                                </label>
+                                <div id="song-description"></div>
+                            </section>
+                        </div>
+                        <div id="song-music-video-column" class="column">
+                            <section id="song-music-video-section" class="section">
+                                <label class="label">
+                                    Music Video
+                                </label>
+                                <div id="song-music-video"></div>
+                                <label id="song-style-genre-mood-label" class="label">
+                                    Style/Genre/Mood
+                                </label>
+                                <div id="song-style-genre-mood"></div>
+                            </section>
+                        </div>
+                    </div>
+                    <div id="song-columns" class="columns">
+                        <div id="song-lyrics-column" class="column">
+                            <section id="song-lyrics-section" class="section">
+                                <label class="label">
+                                    Song Lyrics
+                                </label>
+                                <div id="song-lyrics"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer id="main-footer" class="footer">
+        <div class="content has-text-centered">
+            <p><strong>Music Buster</strong> is made up of two APIs to retrieve the best information of your favorite
+                artists to dynamically display them on the page!</p>
+            <a href="mailto:nmantohac82098@gmail.com">
+                <img id="feedback-icon" src="./assets/images/feedback-icon.png" style="cursor:pointer" />
+            </a>
+            <p>Send Us Feedback!</p>
+            <div class="count">
+                <p> Page Views</p>
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                    <img src="https://hitwebcounter.com/counter/counter.php?page=7225714&style=0027&nbdigits=5&type=page&initCount=0"
+                        title="User Stats" Alt="PHP Hits Count" border="0">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/script.js"></script>
+</body>
+
+</html>
